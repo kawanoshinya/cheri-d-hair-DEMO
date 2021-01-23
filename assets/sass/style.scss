@@ -1,4 +1,7 @@
-// ***** 変数管理 *****
+// **************************************************
+//                    　変数の管理
+// **************************************************
+
 // font-family
 
 
@@ -7,6 +10,7 @@ $f-32: 3.2rem;
 $f-28: 2.8rem;
 $f-24: 2.4rem;
 $f-20: 2rem;
+$f-16: 1.6rem;
 $f-14: 1.4rem;
 
 // color
@@ -29,9 +33,12 @@ $mobile:600px;
   }
 }
 
-// ***** 共通の設定 *****
+// **************************************************
+//                    共通の設定
+// **************************************************
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -67,7 +74,7 @@ body {
       position: absolute;
       bottom: 0px;
       display: inline-block;
-      width: 100%;
+      width: 120%;
       height: 1px;
       left: 50%;
       transform: translateX(-50%);
@@ -77,7 +84,6 @@ body {
     @include mobile {
       font-size: $f-28;
     }
-
   }
 }
 
@@ -89,15 +95,35 @@ body {
   }
 }
 
-// ***** 全体の設定 *****
-// ==================================================
-//                       border
-// ==================================================
+.page {
+  &_header {
+    height: 200px;
+    position: relative;
+
+    @include mobile {
+      height: 100px;
+    }
+  }
+
+  &_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// **************************************************
+//                       index
+// **************************************************
+// ------------------------------------------
+//               border
+// ------------------------------------------
 
 .border {
   position: fixed;
   background-color: #566B73;
-  z-index: 100;
+  z-index: 40;
 
   &_top {
     top: 0;
@@ -128,16 +154,16 @@ body {
 
 
 
-// ==================================================
-//                       header
-// ==================================================
+// ------------------------------------------
+//                header
+// ------------------------------------------
 .header {
   width: 100%;
   height: 70px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   background-color: rgba(255, 255, 255, 0.7);
 
   &_inner {
@@ -162,7 +188,7 @@ body {
     height: 100%;
     background-color: rgb(223, 224, 200);
     transition: 0.3s;
-    z-index: 2;
+    z-index: 30;
   }
 
   &_menu {
@@ -212,7 +238,7 @@ body {
     position: relative;
     width: 40px;
     height: 40px;
-    z-index: 3;
+    z-index: 30;
 
     &_btn {
       width: 100%;
@@ -284,9 +310,9 @@ body {
   }
 }
 
-// ==================================================
-//                   mainvisual
-// ==================================================
+// ------------------------------------------
+//             mainvisual
+// ------------------------------------------
 .mainvisual {
   background-image: url(../img/top_mainvisual.jpg);
   background-position: center;
@@ -339,9 +365,9 @@ body {
   }
 }
 
-// ==================================================
-//                     about
-// ==================================================
+// ------------------------------------------
+//               about
+// ------------------------------------------
 .about {
   &_inner {
     display: flex;
@@ -412,9 +438,9 @@ body {
   }
 }
 
-// ==================================================
-//                       menu
-// ==================================================
+// ------------------------------------------
+//                menu
+// ------------------------------------------
 .menu {
   &_inner {}
 
@@ -485,9 +511,9 @@ body {
   }
 }
 
-// ==================================================
-//                       access
-// ==================================================
+// ------------------------------------------
+//                access
+// ------------------------------------------
 
 .access {
   &_inner {}
@@ -609,9 +635,9 @@ body {
   }
 }
 
-// ==================================================
-//                       footer
-// ==================================================
+// ------------------------------------------
+//                footer
+// ------------------------------------------
 
 .footer {
   display: flex;
@@ -621,4 +647,160 @@ body {
   height: 50px;
   border-top: 1px solid #333;
   font-size: $f-14;
+}
+
+
+// **************************************************
+//               menu(beginner,member)
+// **************************************************
+
+.beginner {
+  .page_header {
+    background-image: url(../img/menu-beginner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.menuCommon {
+  margin-bottom: 40px;
+
+  @include mobile {
+    margin-bottom: 16px;
+  }
+
+
+  &_header {
+    font-size: $f-24;
+    padding: 8px;
+    background-color: #7E7264;
+    color: #fafafa;
+
+    @include mobile {
+      font-size: $f-16;
+    }
+  }
+
+  &_title {}
+}
+
+.card {
+  margin-top: 16px;
+
+  @include mobile {
+    margin-top: 8px;
+  }
+
+  &_category {
+    position: relative;
+    border-bottom: 3px solid #ccc;
+    margin-bottom: 8px;
+    font-size: $f-24;
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 0;
+      z-index: 1;
+      width: 30%;
+      height: 3px;
+      background-color: #7E7264;
+    }
+
+    @include mobile {
+      font-size: $f-16;
+    }
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_item {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: #fafafa;
+    margin: 0 24px 24px 0;
+    width: calc(33.3333333% - 48px / 3);
+
+    @include tablet {
+      width: calc(50% - 24px / 2);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0px;
+
+      @include tablet {
+        margin-right: 24px;
+      }
+
+      @include mobile {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(2n) {
+      @include tablet {
+        margin-right: 0;
+      }
+
+      @include mobile {
+        margin-right: 24px;
+      }
+
+      @include mobile {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(1n) {
+      @include mobile {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.course {
+  &_header {
+    border-bottom: 1px solid #333;
+  }
+
+  &_title {
+    position: relative;
+    margin-left: 16px;
+
+    &:before {
+      content: '◆';
+      position: absolute;
+      top: 0;
+      left: -16px;
+    }
+  }
+
+  &_subTitle {
+    position: relative;
+    text-align: right;
+    margin-right: 50px;
+
+    &:after {
+      content: '(税込)';
+      position: absolute;
+      top: 0;
+      right: -50px;
+    }
+  }
+
+  &_list {
+    padding: 8px;
+  }
+
+  &_item {}
 }
