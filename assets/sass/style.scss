@@ -74,8 +74,8 @@ body {
       background-color: #333;
     }
 
-    @include tablet {
-      font-size: $f-24;
+    @include mobile {
+      font-size: $f-28;
     }
 
   }
@@ -90,6 +90,43 @@ body {
 }
 
 // ***** 全体の設定 *****
+// ==================================================
+//                       border
+// ==================================================
+
+.border {
+  position: fixed;
+  background-color: red;
+  z-index: 100;
+
+  &_top {
+    top: 0;
+    width: 100%;
+    height: 6px;
+  }
+
+  &_right {
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+  }
+
+  &_bottom {
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+  }
+
+  &_left {
+    bottom: 0;
+    width: 6px;
+    height: 100%;
+  }
+}
+
+
+
 
 // ==================================================
 //                       header
@@ -123,7 +160,7 @@ body {
     right: -60%;
     width: 60%;
     height: 100%;
-    background-color: wheat;
+    background-color: rgb(223, 224, 200);
     transition: 0.3s;
     z-index: 2;
   }
@@ -261,6 +298,10 @@ body {
   position: relative;
 
   @include tablet {
+    height: 320px;
+  }
+
+  @include mobile {
     height: 270px;
   }
 
