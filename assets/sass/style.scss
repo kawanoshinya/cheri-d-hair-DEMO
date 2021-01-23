@@ -15,7 +15,7 @@ $body-color:#DFE0D8;
 
 // ブレイクポイント
 $tablet:1024px;
-$mobile:599px;
+$mobile:600px;
 
 @mixin tablet {
   @media screen and (max-width:$tablet) {
@@ -81,10 +81,10 @@ body {
   }
 }
 
-.sp_br {
+.br_sp {
   display: none;
 
-  @include tablet {
+  @include mobile {
     display: block;
   }
 }
@@ -460,6 +460,10 @@ body {
 
     &-frame {
       height: 400px;
+
+      @include mobile {
+        height: 300px;
+      }
     }
   }
 
@@ -501,11 +505,26 @@ body {
   &_title {
     padding: 1rem;
     font-size: $f-28;
+    border-bottom: 1px solid #333;
+
+    @include mobile {
+      padding: 0.5rem;
+      font-size: $f-24;
+    }
+  }
+
+  &_subTitle {
+    font-size: $f-20;
+
+    @include mobile {
+      font-size: $f-14;
+    }
   }
 
   &_row {
     display: flex;
     border-bottom: 1px solid #333;
+    font-size: $f-14;
   }
 
   &_header {
@@ -514,24 +533,51 @@ body {
     align-items: center;
     padding: 1rem;
     font-weight: bold;
+
+    @include mobile {
+      width: 90px;
+      padding: 0.5rem;
+    }
   }
 
   &_detail {
     width: 100%;
     padding: 1rem;
+
+    @include mobile {
+      padding: 0.5rem;
+    }
   }
 
   &_open {
     &-time {
-      width: 250px;
+      max-width: 250px;
       padding: 0.5rem;
+
+      @include mobile {
+        width: 100%;
+      }
     }
 
     &-final {
       display: flex;
       justify-content: space-between;
-      width: 250px;
+      max-width: 250px;
       padding: 0.5rem;
     }
   }
+}
+
+// ==================================================
+//                       footer
+// ==================================================
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #333;
+  font-size: $f-14;
 }

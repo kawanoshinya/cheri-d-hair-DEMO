@@ -51,12 +51,12 @@ body {
   }
 }
 
-.sp_br {
+.br_sp {
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
-  .sp_br {
+@media screen and (max-width: 600px) {
+  .br_sp {
     display: block;
   }
 }
@@ -385,7 +385,7 @@ body {
   padding: 4rem 0;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .menu_main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -399,13 +399,13 @@ body {
   width: 45%;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .menu_button {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .menu_button + .menu_button {
     padding-top: 2rem;
   }
@@ -459,6 +459,12 @@ body {
   height: 400px;
 }
 
+@media screen and (max-width: 600px) {
+  .access_map-frame {
+    height: 300px;
+  }
+}
+
 .access_main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -499,7 +505,7 @@ body {
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
   .table {
     width: 100%;
   }
@@ -508,6 +514,24 @@ body {
 .table_title {
   padding: 1rem;
   font-size: 2.8rem;
+  border-bottom: 1px solid #333;
+}
+
+@media screen and (max-width: 600px) {
+  .table_title {
+    padding: 0.5rem;
+    font-size: 2.4rem;
+  }
+}
+
+.table_subTitle {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .table_subTitle {
+    font-size: 1.4rem;
+  }
 }
 
 .table_row {
@@ -515,6 +539,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #333;
+  font-size: 1.4rem;
 }
 
 .table_header {
@@ -529,14 +554,33 @@ body {
   font-weight: bold;
 }
 
+@media screen and (max-width: 600px) {
+  .table_header {
+    width: 90px;
+    padding: 0.5rem;
+  }
+}
+
 .table_detail {
   width: 100%;
   padding: 1rem;
 }
 
+@media screen and (max-width: 600px) {
+  .table_detail {
+    padding: 0.5rem;
+  }
+}
+
 .table_open-time {
-  width: 250px;
+  max-width: 250px;
   padding: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .table_open-time {
+    width: 100%;
+  }
 }
 
 .table_open-final {
@@ -546,7 +590,23 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 250px;
+  max-width: 250px;
   padding: 0.5rem;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #333;
+  font-size: 1.4rem;
 }
 /*# sourceMappingURL=style.css.map */
