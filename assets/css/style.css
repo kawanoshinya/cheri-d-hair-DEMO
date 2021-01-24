@@ -80,6 +80,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  color: #fafafa;
 }
 
 .border {
@@ -108,7 +109,7 @@ body {
 }
 
 .border_left {
-  bottom: 0;
+  top: 0;
   width: 6px;
   height: 100%;
 }
@@ -831,5 +832,56 @@ body {
 
 .course_list {
   padding: 8px;
+}
+
+.operation_item {
+  border-radius: 3px;
+  background-color: #fafafa;
+  padding: 8px;
+}
+
+.operation_item + .operation_item {
+  margin-top: 2rem;
+}
+
+.operation_name {
+  position: relative;
+  display: inline;
+  font-weight: bold;
+}
+
+.operation_name:after {
+  content: '・・・';
+  position: absolute;
+  top: 0;
+  right: -50px;
+}
+
+.operation_text {
+  padding-left: 16px;
+}
+
+.operation_customer {
+  margin: 1rem 0 0.5rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.regulation_inner {
+  border: 1px solid #333;
+  outline: 1px solid #333;
+  outline-offset: 3px;
+}
+
+.regulation_title {
+  text-align: center;
+  padding: 16px;
+}
+
+.regulation_list {
+  padding: 16px;
+}
+
+.regulation_item + .regulation_item {
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
