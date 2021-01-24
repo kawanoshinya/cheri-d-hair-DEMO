@@ -669,12 +669,6 @@ body {
   font-size: 1.4rem;
 }
 
-.beginner .page_header {
-  background-image: url(../img/menu-beginner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .menuCommon {
   margin-bottom: 40px;
 }
@@ -883,5 +877,17 @@ body {
 
 .regulation_item + .regulation_item {
   margin-top: 1rem;
+}
+
+.beginner .page_header {
+  background-image: url(../img/menu-beginner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.member .page_header {
+  background-image: url(../img/menu-member.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /*# sourceMappingURL=style.css.map */
