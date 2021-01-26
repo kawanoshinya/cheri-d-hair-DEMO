@@ -118,6 +118,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fafafa;
+
+    &:before {
+      background-color: #fafafa;
+    }
+
   }
 }
 
@@ -374,9 +379,9 @@ body {
 }
 
 // ------------------------------------------
-//               about
+//               about-top
 // ------------------------------------------
-.about {
+.about-top {
   &_inner {
     display: flex;
     justify-content: center;
@@ -867,6 +872,10 @@ body {
   &_text {}
 }
 
+// ------------------------------------------
+//                beginner
+// ------------------------------------------
+
 .beginner {
   .page_header {
     background-image: url(../img/menu-beginner.jpg);
@@ -875,10 +884,28 @@ body {
   }
 }
 
+
+// ------------------------------------------
+//                  member
+// ------------------------------------------
+
 .member {
   .page_header {
     background-image: url(../img/menu-member.jpg);
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+
+// **************************************************
+//                       about
+// **************************************************
+.about {
+  .page_header {
+    background-image: url(../img/about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 }

@@ -84,6 +84,10 @@ body {
   color: #fafafa;
 }
 
+.page_title:before {
+  background-color: #fafafa;
+}
+
 .border {
   position: fixed;
   background-color: #566B73;
@@ -349,7 +353,7 @@ body {
   }
 }
 
-.about_inner {
+.about-top_inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -362,25 +366,25 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  .about_inner {
+  .about-top_inner {
     display: block;
   }
 }
 
-.about_thumbnail {
+.about-top_thumbnail {
   width: 50%;
   padding-right: 2.5%;
 }
 
 @media screen and (max-width: 1024px) {
-  .about_thumbnail {
+  .about-top_thumbnail {
     width: 100%;
     margin-bottom: 1.6rem;
     padding-right: 0;
   }
 }
 
-.about_image {
+.about-top_image {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
@@ -388,39 +392,39 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  .about_image {
+  .about-top_image {
     height: 120px;
   }
 }
 
-.about_body {
+.about-top_body {
   width: 50%;
   padding-left: 2.5%;
 }
 
 @media screen and (max-width: 1024px) {
-  .about_body {
+  .about-top_body {
     width: 100%;
     padding-left: 0;
   }
 }
 
-.about_main {
+.about-top_main {
   text-align: center;
 }
 
-.about_text {
+.about-top_text {
   padding: 4rem 0;
 }
 
 @media screen and (max-width: 1024px) {
-  .about_text {
+  .about-top_text {
     padding: 2rem 0;
     font-size: 1.4rem;
   }
 }
 
-.about_link {
+.about-top_link {
   position: relative;
   display: inline-block;
   padding: 0.8rem 5.6rem;
@@ -431,7 +435,7 @@ body {
   border-radius: 3px;
 }
 
-.about_icon {
+.about-top_icon {
   margin-left: 1.6rem;
 }
 
@@ -888,6 +892,12 @@ body {
 
 .member .page_header {
   background-image: url(../img/menu-member.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about .page_header {
+  background-image: url(../img/about.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
