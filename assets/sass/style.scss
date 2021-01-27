@@ -3,7 +3,13 @@
 // **************************************************
 
 // font-family
-
+$f-fam: 'Montserrat',
+"Helvetica Neue",
+Arial,
+"Hiragino Kaku Gothic ProN",
+"Hiragino Sans",
+Meiryo,
+sans-serif;
 
 // font-size
 $f-32: 3.2rem;
@@ -48,12 +54,7 @@ body {
   line-height: 1.5;
   background-color: $body-color;
 
-  font-family: 'Montserrat', "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+  font-family: $f-fam;
 }
 
 .section {
@@ -126,9 +127,6 @@ body {
   }
 }
 
-// **************************************************
-//                       index
-// **************************************************
 // ------------------------------------------
 //               border
 // ------------------------------------------
@@ -164,9 +162,9 @@ body {
   }
 }
 
-
-
-
+// **************************************************
+//                       index
+// **************************************************
 // ------------------------------------------
 //                header
 // ------------------------------------------
@@ -926,50 +924,221 @@ body {
 }
 
 .concept {
-  &_body {}
+  margin-bottom: 80px;
+
+  &_body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
 
   &-left {
-    &_text {}
+    width: 50%;
+    padding-right: 2.5%;
 
-    &_list {}
+    @include tablet {
+      width: 80%;
+      padding-right: 0;
+      margin-bottom: 16px;
+    }
 
-    &_item {}
+    @include mobile {
+      width: 100%;
+    }
+
+    &_text {
+      font-size: $f-20;
+      font-weight: bold;
+      text-align: center;
+
+      @include tablet {
+        font-size: $f-16;
+      }
+    }
+
+    &_list {
+      background-color: #DEDBDB;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+
+      @include mobile {
+        padding: 8px;
+      }
+    }
+
+    &_item {
+      position: relative;
+      margin-left: 20px;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: -15px;
+        width: 10px;
+        height: 5px;
+        border-left: 2px solid #333;
+        border-bottom: 2px solid #333;
+        transform: rotate(-45deg);
+      }
+    }
   }
 
   &-right {
+    width: 50%;
+    padding-left: 2.5%;
+
+    @include tablet {
+      width: 80%;
+      padding-left: 0;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
     &_list {}
 
-    &_item {}
+    &_item {
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 15px;
+      border: 1px solid #333;
+
+      @include mobile {
+        padding: 8px;
+      }
+    }
+
+    &_item+&_item {
+      margin-top: 8px;
+    }
   }
 
-  &_text {}
+  &_text {
+    font-size: $f-20;
+    text-align: center;
+    padding: 16px;
+    text-decoration: underline;
+
+    @include mobile {
+      font-size: $f-16;
+      text-align: left;
+      padding: 8px;
+    }
+  }
 }
 
 .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
 
-  &_thumbnail {}
+  @include tablet {
+    display: block;
+  }
 
-  &_body {}
+  @include mobile {
+    width: 100%;
+  }
 
-  &_header {}
+  &_thumbnail {
+    width: 40%;
 
-  &_left {}
+    @include tablet {
+      width: 100%;
+      margin-bottom: 1.6rem;
+    }
+  }
 
-  &_name {}
+  &_image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
 
-  &_kana {}
+    @include mobile {
+      width: 250px;
+      height: 250px;
+    }
+  }
 
-  &_right {}
+  &_body {
+    width: 60%;
+    padding: 0 32px;
 
-  &_age {}
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #333;
+  }
+
+  &_left {
+    display: flex;
+    align-items: center;
+  }
+
+  &_name {
+    font-size: $f-20;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  &_kana {
+    font-size: $f-14;
+  }
+
+  &_right {
+    font-size: $f-14;
+  }
+
+  &_age {
+    margin-right: 8px;
+  }
 
   &_career {}
 
-  &_main {}
+  &_main {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
 
   &_text {}
 
-  &_footer {}
+  &_footer {
+    text-align: right;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
 
   &_link {}
+
+  &_link+&_link {
+    margin-left: 8px;
+  }
 }
