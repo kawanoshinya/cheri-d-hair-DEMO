@@ -146,6 +146,22 @@ body {
           align-items: center;
 }
 
+.header_image {
+  height: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header_image {
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header_image {
+    height: 17px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .nav {
     position: fixed;

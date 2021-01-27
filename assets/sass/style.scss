@@ -189,6 +189,20 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+
+  &_title {}
+
+  &_image {
+    height: 30px;
+
+    @include tablet {
+      height: 25px;
+    }
+
+    @include mobile {
+      height: 17px;
+    }
+  }
 }
 
 // グローバルナビ
@@ -908,4 +922,54 @@ body {
     background-size: cover;
   }
 
+  &_inner {}
+}
+
+.concept {
+  &_body {}
+
+  &-left {
+    &_text {}
+
+    &_list {}
+
+    &_item {}
+  }
+
+  &-right {
+    &_list {}
+
+    &_item {}
+  }
+
+  &_text {}
+}
+
+.profile {
+
+  &_thumbnail {}
+
+  &_body {}
+
+  &_header {}
+
+  &_left {}
+
+  &_name {}
+
+  &_kana {}
+
+  &_right {}
+
+  &_age {}
+
+  &_career {}
+
+  &_main {}
+
+  &_text {}
+
+  &_footer {}
+
+  &_link {}
 }
