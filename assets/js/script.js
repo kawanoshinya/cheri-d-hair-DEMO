@@ -22,10 +22,10 @@ for (let i = 0; i < list.length; i++) {
     });
 }
 
-$(function () {
-    var height = $("#header").height();
-    $("body").css("margin-top", height + 0);//0pxだけ余裕をもたせる
-});
+// $(function () {
+//     var height = $("#header").height();
+//     $("body").css("margin-top", height + 0);//0pxだけ余裕をもたせる
+// });
 
 // スマホのアドレスバー対策
 $(".fv").css("height", $(window).height());
