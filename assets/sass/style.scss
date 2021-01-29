@@ -2,13 +2,16 @@
 //                    　変数の管理
 // **************************************************
 
-// font-family
-$f-fam: 'Montserrat',
-"Helvetica Neue",
-Arial,
-"Hiragino Kaku Gothic ProN",
-"Hiragino Sans",
+//// font-family
+$f-fam:'Montserrat',
+'Lato',
+'Noto Sans JP',
+'ヒラギノ角ゴ ProN',
+'Hiragino Kaku Gothic ProN',
+'メイリオ',
 Meiryo,
+'ＭＳ Ｐゴシック',
+'MS PGothic',
 sans-serif;
 
 // font-size
@@ -44,7 +47,6 @@ $mobile:600px;
 // **************************************************
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -56,6 +58,8 @@ body {
 
   font-family: $f-fam;
 }
+
+
 
 .section {
   &_wrapper {
@@ -128,6 +132,7 @@ body {
   }
 }
 
+
 // ------------------------------------------
 //               border
 // ------------------------------------------
@@ -172,11 +177,11 @@ body {
 .header {
   width: 100%;
   height: 70px;
-  // position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
 
   &_inner {
     max-width: 1200px;
@@ -249,6 +254,35 @@ body {
     display: block;
   }
 
+  &_tel {
+    display: none;
+
+    @include mobile {
+      font-size: $f-20;
+      position: relative;
+      display: block;
+      border-radius: 5px;
+      border: 1px solid #333;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      padding: 8px 0;
+      margin: 16px auto;
+      max-width: 250px;
+
+      &::after {
+        content: "";
+        background: url(../img/nav_tel.svg) no-repeat center;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: calc(50% - 12px);
+        left: 15px;
+      }
+    }
+  }
+
   &--slide {
     right: 0;
   }
@@ -261,7 +295,6 @@ body {
 
   @include tablet {
     display: block;
-    position: relative;
     width: 40px;
     height: 40px;
     z-index: 30;
@@ -329,6 +362,7 @@ body {
     height: 100vh;
     background: rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    z-index: 20;
   }
 
   &--active {
@@ -961,10 +995,19 @@ body {
       @include tablet {
         font-size: $f-16;
       }
+
+      &--secondary {
+        font-size: $f-16;
+        text-align: center;
+
+        @include mobile{
+          text-align: left;
+        }
+      }
     }
 
     &_list {
-      background-color: #DEDBDB;
+      background-color: #fafafa;
       border: 1px solid #ccc;
       border-radius: 3px;
       padding: 16px;
@@ -1008,16 +1051,30 @@ body {
       width: 100%;
     }
 
-    &_list {}
+    &_text {}
+
+    &_list {
+      counter-reset: number 0;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 3px;
+
+      @include mobile{
+        padding: 8px;
+      }
+    }
 
     &_item {
-      padding: 10px;
-      background-color: #fff;
-      border-radius: 15px;
-      border: 1px solid #333;
+      text-indent: -16px;
+      margin-left: 16px;
+
+      &:before {
+        counter-increment: number 1;
+        content: counter(number) " . ";
+      }
 
       @include mobile {
-        padding: 8px;
+        padding: 4px;
       }
     }
 
@@ -1060,7 +1117,7 @@ body {
 
     @include tablet {
       width: 100%;
-      margin-bottom: 1.6rem;
+      margin-bottom: 3.2rem;
     }
   }
 
@@ -1068,8 +1125,9 @@ body {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    border-radius: 50%;
     margin: 0 auto;
+    box-shadow: 20px 20px 3px rgba(100, 100, 100, 0.4);
+    border-radius: 3px;
 
     @include mobile {
       width: 250px;
@@ -1098,13 +1156,12 @@ body {
 
     @include mobile {
       align-items: baseline;
-      flex-direction: column;
     }
   }
 
   &_left {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
 
   &_name {
@@ -1121,7 +1178,6 @@ body {
     font-size: $f-14;
 
     @include mobile {
-      width: 100%;
       text-align: right;
     }
   }
@@ -1152,4 +1208,342 @@ body {
   &_link+&_link {
     margin-left: 8px;
   }
+}
+
+// **************************************************
+//                  アイコンの設定
+// **************************************************
+
+.follow-me {
+  list-style: none;
+  overflow: hidden;
+}
+
+.follow-me a::before {
+  background-color: #eee;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #333;
+  display: inline-block;
+  font-family: FontAwesome;
+  height: 32px;
+  /* Button height */
+  line-height: 32px;
+  /* Button height */
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  text-align: center;
+  width: 80px;
+  /* Button width */
+}
+
+.follow-me a:hover::before {
+  color: #fff;
+}
+
+.follow-me a[href*="amazon.co.jp"]::before,
+.follow-me a[href*="amazon.com"]::before,
+  {
+  content: "\f270";
+}
+
+.follow-me a[href*="codepen.io"]::before {
+  content: "\f1cb";
+}
+
+.follow-me a[href*="delicious.com"]::before {
+  content: "\f1a5";
+}
+
+.follow-me a[href*="deviantart.com"]::before {
+  content: "\f1bd";
+}
+
+.follow-me a[href*="digg.com"]::before {
+  content: "\f1a6";
+}
+
+.follow-me a[href*="dribble.com"]::before {
+  content: "\f17d";
+}
+
+.follow-me a[href*="dropbox.com"]::before {
+  content: "\f16b";
+}
+
+.follow-me a[href*="facebook.com"]::before {
+  content: "\f09a";
+}
+
+.follow-me a[href*="feedly.com"]::before {
+  content: "\f09e";
+}
+
+.follow-me a[href*="flickr.com"]::before {
+  content: "\f16e";
+}
+
+.follow-me a[href*="foursquare.com"]::before {
+  content: "\f180";
+}
+
+.follow-me a[href*="github.com"]::before {
+  content: "\f09b";
+}
+
+.follow-me a[href*="plus.google.com"]::before {
+  content: "\f0d5";
+}
+
+.follow-me a[href*="b.hatena.ne.jp"]::before {
+  content: "\f027";
+  font-family: blogicon;
+}
+
+.follow-me a[href*="instagram.com"]::before {
+  content: "\f16d";
+}
+
+.follow-me a[href*="last.fm"]::before {
+  content: "\f202";
+}
+
+.follow-me a[href*="linkedin.com"]::before {
+  content: "\f0e1";
+}
+
+.follow-me a[href*="nicovideo.jp"]::before {
+  content: "\f047";
+  font-family: blogicon;
+}
+
+.follow-me a[href*="pinterest.com"]::before {
+  content: "\f0d2";
+}
+
+.follow-me a[href*="getpocket.com"]::before {
+  content: "\f265";
+}
+
+.follow-me a[href*="reddit.com"]::before {
+  content: "\f1a1";
+}
+
+.follow-me a[href*="skype.com"]::before,
+.follow-me a[href*="skype:"]::before {
+  content: "\f17e";
+}
+
+.follow-me a[href*="slideshare.net"]::before {
+  content: "\f1e7";
+}
+
+.follow-me a[href*="spotify.com"]::before {
+  content: "\f1bc";
+}
+
+.follow-me a[href*="steamcommunity.com"]::before {
+  content: "\f1b6";
+}
+
+.follow-me a[href*="stumbleupon.com"]::before {
+  content: "\f1a4";
+}
+
+.follow-me a[href*="tumblr.com"]::before {
+  content: "\f173";
+}
+
+.follow-me a[href*="twitch.tv"]::before {
+  content: "\f1e8";
+}
+
+.follow-me a[href*="twitter.com"]::before {
+  content: "\f099";
+}
+
+.follow-me a[href*="vimeo.com"]::before {
+  content: "\f27d";
+}
+
+.follow-me a[href*="vine.co"]::before {
+  content: "\f1ca";
+}
+
+.follow-me a[href*="weibo.com"]::before {
+  content: "\f18a";
+}
+
+.follow-me a[href*="whatsapp.com"]::before {
+  content: "\f232";
+}
+
+.follow-me a[href*="wordpress.com"]::before,
+.follow-me a[href*="wordpress.org"]::before {
+  content: "\f19a";
+}
+
+.follow-me a[href*="youtube.com"]::before {
+  content: "\f16a";
+}
+
+.follow-me a[href$="/feed"]::before {
+  content: "\f09e";
+}
+
+.follow-me a[href$="/subscribe"]::before {
+  content: "\f000";
+  font-family: blogicon;
+}
+
+.follow-me a[href*="amazon.co.jp"]:hover::before,
+.follow-me a[href*="amazon.com"]:hover::before,
+  {
+  background-color: #ff9900;
+}
+
+.follow-me a[href*="codepen.io"]:hover::before {
+  background-color: #000000;
+}
+
+.follow-me a[href*="delicious.com"]:hover::before {
+  background-color: #3399ff;
+}
+
+.follow-me a[href*="deviantart.com"]:hover::before {
+  background-color: #05cc47;
+}
+
+.follow-me a[href*="digg.com"]:hover::before {
+  background-color: #000000;
+}
+
+.follow-me a[href*="dribble.com"]:hover::before {
+  background-color: #ea4c89;
+}
+
+.follow-me a[href*="dropbox.com"]:hover::before {
+  background-color: #007ee5;
+}
+
+.follow-me a[href*="facebook.com"]:hover::before {
+  background-color: #3b5998;
+}
+
+.follow-me a[href*="feedly.com"]:hover::before {
+  background-color: #6cc655;
+}
+
+.follow-me a[href*="flickr.com"]:hover::before {
+  background-color: #0063dc;
+}
+
+.follow-me a[href*="foursquare.com"]:hover::before {
+  background-color: #f94877;
+}
+
+.follow-me a[href*="github.com"]:hover::before {
+  background-color: #181717;
+}
+
+.follow-me a[href*="plus.google.com"]:hover::before {
+  background-color: #dc4e41;
+}
+
+.follow-me a[href*="b.hatena.ne.jp"]:hover::before {
+  background-color: #008fde;
+}
+
+.follow-me a[href*="instagram.com"]:hover::before {
+  background-color: #125688;
+}
+
+.follow-me a[href*="last.fm"]:hover::before {
+  background-color: #d51007;
+}
+
+.follow-me a[href*="linkedin.com"]:hover::before {
+  background-color: #0077b5;
+}
+
+.follow-me a[href*="nicovideo.jp"]:hover::before {
+  background-color: #eaeaea;
+}
+
+.follow-me a[href*="pinterest.com"]:hover::before {
+  background-color: #bd081c;
+}
+
+.follow-me a[href*="getpocket.com"]:hover::before {
+  background-color: #ef3f56;
+}
+
+.follow-me a[href*="reddit.com"]:hover::before {
+  background-color: #ff4500;
+}
+
+.follow-me a[href*="skype.com"]:hover::before,
+.follow-me a[href*="skype:"]:hover::before {
+  background-color: #00aff0;
+}
+
+.follow-me a[href*="slideshare.net"]:hover::before {
+  background-color: #2d2d2d;
+}
+
+.follow-me a[href*="spotify.com"]:hover::before {
+  background-color: #84bd00;
+}
+
+.follow-me a[href*="steamcommunity.com"]:hover::before {
+  background-color: #171a21;
+}
+
+.follow-me a[href*="stumbleupon.com"]:hover::before {
+  background-color: #eb4929;
+}
+
+.follow-me a[href*="tumblr.com"]:hover::before {
+  background-color: #36465d;
+}
+
+.follow-me a[href*="twitch.tv"]:hover::before {
+  background-color: #6441a5;
+}
+
+.follow-me a[href*="twitter.com"]:hover::before {
+  background-color: #55acee;
+}
+
+.follow-me a[href*="vimeo.com"]:hover::before {
+  background-color: #1ab7ea;
+}
+
+.follow-me a[href*="vine.co"]:hover::before {
+  background-color: #11b58a;
+}
+
+.follow-me a[href*="weibo.com"]:hover::before {
+  background-color: #e6162d;
+}
+
+.follow-me a[href*="whatsapp.com"]:hover::before {
+  background-color: #64d548;
+}
+
+.follow-me a[href*="wordpress.com"]:hover::before,
+.follow-me a[href*="wordpress.org"]:hover::before {
+  background-color: #21759b;
+}
+
+.follow-me a[href*="youtube.com"]:hover::before {
+  background-color: #cd201f;
+}
+
+.follow-me a[href$="/feed"]:hover::before {
+  background-color: #ffa500;
+}
+
+.follow-me a[href$="/subscribe"]:hover::before {
+  background-color: #363636;
 }
