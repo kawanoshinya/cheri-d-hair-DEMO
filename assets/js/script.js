@@ -1,4 +1,4 @@
-
+// ハンバーガーボタンの動き
 function hamburger() {
     document.getElementById('top').classList.toggle('bar--active');
     document.getElementById('middle').classList.toggle('bar--active');
@@ -34,6 +34,8 @@ for (let i = 0; i < list.length; i++) {
     });
 }
 
+
+// headerの高さ分bodyを下げる
 $(function () {
     var height = $("#header").height();
     $("body").css("margin-top", height + 0);//0pxだけ余裕をもたせる
@@ -42,6 +44,8 @@ $(function () {
 // スマホのアドレスバー対策
 $(".fv").css("height", $(window).height());
 
+
+// 
 var ua = navigator.userAgent.toLowerCase();
 var isMobile = /iphone/.test(ua) || /android(.+)?mobile/.test(ua);
 
@@ -50,3 +54,14 @@ if (!isMobile) {
         e.preventDefault();
     });
 }
+
+
+// ページトップへ戻るボタン
+$(window).scroll(function () {
+    var now = $(window).scrollTop();
+    if (now > 200) {
+        $('.pagetop').fadeIn("slow");
+    } else {
+        $('.pagetop').fadeOut('slow');
+    }
+});
