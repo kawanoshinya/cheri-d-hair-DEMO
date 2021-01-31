@@ -557,7 +557,7 @@ body {
 }
 
 .menu_icon {
-  margin-left: 8px;
+  margin-left: 1.6rem;
 }
 
 .access_map {
@@ -760,33 +760,18 @@ body {
 .pagetop_link {
   display: block;
   font-size: 0;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   text-align: center;
   border: 1px solid #737373;
-  line-height: 40px;
+  line-height: 50px;
   background-color: #fff;
-}
-
-@media screen and (max-width: 600px) {
-  .pagetop_link {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-  }
 }
 
 .pagetop_icon {
   font-size: 20px;
   color: #333;
-  line-height: 40px;
-}
-
-@media screen and (max-width: 600px) {
-  .pagetop_icon {
-    font-size: 15px;
-    line-height: 30px;
-  }
+  line-height: 50px;
 }
 
 .menuCommon {
