@@ -231,14 +231,14 @@ body {
     margin: 16px auto;
     width: 200px;
   }
-  .nav_tel::after {
+  .nav_tel::before {
     content: "";
     background: url(../img/nav_tel.svg) no-repeat center;
     background-size: contain;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: calc(50% - 12px);
+    top: calc(50% - 10px);
     left: 15px;
   }
 }
@@ -557,7 +557,7 @@ body {
 }
 
 .menu_icon {
-  margin-left: 1.6rem;
+  margin-left: 8px;
 }
 
 .access_map {
@@ -760,18 +760,33 @@ body {
 .pagetop_link {
   display: block;
   font-size: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   border: 1px solid #737373;
-  line-height: 50px;
+  line-height: 40px;
   background-color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .pagetop_link {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
 }
 
 .pagetop_icon {
   font-size: 20px;
   color: #333;
-  line-height: 50px;
+  line-height: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .pagetop_icon {
+    font-size: 15px;
+    line-height: 30px;
+  }
 }
 
 .menuCommon {

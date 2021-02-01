@@ -16,7 +16,7 @@ document.getElementById('bg_layer').addEventListener('click', function () {
 });
 
 $('a[href^="#"]').click(function () {
-    var speed = 800;
+    var speed = 500;
     var headerH = $(".header").height();
     var href = $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
@@ -25,7 +25,6 @@ $('a[href^="#"]').click(function () {
     hamburger();
     return false;
 });
-
 
 let list = document.getElementsByClassName('nav_menu');
 
@@ -46,7 +45,7 @@ $(function () {
 $(".fv").css("height", $(window).height());
 
 
-// tellボタン（スマホのみ現れる）
+// 
 var ua = navigator.userAgent.toLowerCase();
 var isMobile = /iphone/.test(ua) || /android(.+)?mobile/.test(ua);
 
