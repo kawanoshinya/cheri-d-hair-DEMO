@@ -55,11 +55,8 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   background-color: $body-color;
-
   font-family: $f-fam;
 }
-
-
 
 .section {
   &_wrapper {
@@ -262,20 +259,19 @@ body {
       border: 1px solid #333;
       font-weight: bold;
       color: #333;
-      text-align: center;
-      padding: 8px 0;
+      padding: 8px 0 8px 36px;
       margin: 16px auto;
-      width: 200px;
+      width: 160px;
 
       &::before {
         content: "";
         background: url(../img/nav_tel.svg) no-repeat center;
         background-size: contain;
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         position: absolute;
-        top: calc(50% - 10px);
-        left: 15px;
+        top: calc(50% - 9px);
+        left: 12px;
       }
     }
   }
@@ -568,7 +564,7 @@ body {
   }
 
   &_icon {
-    margin-left: 8px;
+    margin-left: 1.6rem;
   }
 }
 
@@ -748,29 +744,18 @@ body {
   &_link {
     display: block;
     font-size: 0;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     border: 1px solid #737373;
-    line-height: 40px;
+    line-height: 50px;
     background-color: #fff;
-
-    @include mobile {
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-    }
   }
 
   &_icon {
     font-size: 20px;
     color: #333;
-    line-height: 40px;
-
-    @include mobile {
-      font-size: 15px;
-      line-height: 30px;
-    }
+    line-height: 50px;
   }
 }
 
