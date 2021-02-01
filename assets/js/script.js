@@ -16,7 +16,7 @@ document.getElementById('bg_layer').addEventListener('click', function () {
 });
 
 $('a[href^="#"]').click(function () {
-    var speed = 600;
+    var speed = 500;
     var headerH = $(".header").height();
     var href = $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
@@ -57,12 +57,49 @@ if (!isMobile) {
 }
 
 
-// ページトップへ戻るボタン
-$(window).scroll(function () {
-    var now = $(window).scrollTop();
-    if (now > 200) {
-        $('.pagetop').fadeIn("slow");
-    } else {
-        $('.pagetop').fadeOut('slow');
-    }
+// // ページトップへ戻るボタン
+$(function () {
+    // TOPに戻るボタン
+    var topBtn = $('.pagetop');
+    topBtn.hide();
+
+    //スクロールが100に達したらボタン表示
+    $(window).scroll(function () {
+        var w = $(window).width();
+        if ($(this).scrollTop() > 200) {
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+
+    //スムーススクロールでページトップへ
+    topBtn.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
 });
+
+
+// // スクロール禁止
+// // （.hamburger = メニューのボタン　.nav　=　メニューの本体）
+// $(function () {
+//     var state = false;
+//     var scrollpos;
+
+//     $('.hamburger').on('click', function () {
+//         if (state == false) {
+//             scrollpos = $(window).scrollTop();
+//             $('body').addClass('fixed').css({ 'top': -scrollpos });
+//             $('.nav').addClass('open');
+//             state = true;
+//         } else {
+//             $('body').removeClass('fixed').css({ 'top': 0 });
+//             window.scrollTo(0, scrollpos);
+//             $('.nav').removeClass('open');
+//             state = false;
+//         }
+//     });
+// });
