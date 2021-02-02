@@ -23,7 +23,18 @@ $f-16: 1.6rem;
 $f-14: 1.4rem;
 
 // color
-$body-color:#DFE0D8;
+$base:rgb(223, 224, 216);
+$main:rgb(126, 114, 100);
+// $accent:rgb(, , );
+
+$bg-white:rgb(250, 250, 250);
+$bg-black:rgb(51, 51, 51);
+
+$transparent8:rgba(250, 250, 250, 0.8);
+$transparent9:rgba(250, 250, 250, 0.9);
+
+$font-white:rgb(250, 250, 250);
+$font-black:rgb(51, 51, 51);
 
 
 // ブレイクポイント
@@ -54,7 +65,7 @@ body {
   max-width: 100%;
   font-size: 1.6rem;
   line-height: 1.5;
-  background-color: $body-color;
+  background-color: $base;
   font-family: $f-fam;
 }
 
@@ -87,7 +98,7 @@ body {
       height: 1px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #333;
+      background-color: $bg-black;
     }
 
     @include mobile {
@@ -119,11 +130,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fafafa;
+    color: $font-white;
     min-width: 220px;
 
     &:before {
-      background-color: #fafafa;
+      background-color: $bg-white;
     }
 
   }
@@ -143,7 +154,7 @@ body {
 
 .border {
   position: fixed;
-  background-color: #566B73;
+  background-color: $main;
   z-index: 40;
 
   &_top {
@@ -185,7 +196,7 @@ body {
   top: 0;
   left: 0;
   z-index: 20;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $transparent9;
 
   &_inner {
     max-width: 1200px;
@@ -221,7 +232,7 @@ body {
     right: -70%;
     width: 70%;
     height: 100%;
-    background-color: rgb(223, 224, 200);
+    background-color: $base;
     transition: 0.3s;
     z-index: 20;
   }
@@ -265,7 +276,7 @@ body {
       border-radius: 5px;
       border: 1px solid #333;
       font-weight: bold;
-      color: #333;
+      color: $font-black;
       padding: 8px 0 8px 36px;
       margin: 16px auto;
       width: 160px;
@@ -304,7 +315,7 @@ body {
       height: 100%;
       padding: 10%;
       border: 1px solid #333;
-      background-color: #fff;
+      background-color: $bg-white;
       position: relative;
       cursor: pointer;
     }
@@ -316,7 +327,7 @@ body {
   width: 80%;
   height: 2px;
   border-radius: 2px;
-  background-color: #333;
+  background-color: $bg-black;
   position: absolute;
   transition: 0.2s;
 
@@ -396,7 +407,7 @@ body {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $transparent8;
     padding: 16px;
     width: 100%;
     max-width: 400px;
@@ -553,7 +564,7 @@ body {
   &_text {
     text-align: center;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: $transparent8;
     border-radius: 3px;
   }
 
@@ -712,7 +723,7 @@ body {
   height: 100px;
   border-top: 1px solid #333;
   font-size: $f-14;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $transparent9;
 
   @include mobile {
     height: 80px;
@@ -756,12 +767,12 @@ body {
     text-align: center;
     border: 1px solid #737373;
     line-height: 50px;
-    background-color: #fff;
+    background-color: $bg-white;
   }
 
   &_icon {
     font-size: 20px;
-    color: #333;
+    color: $font-black;
     line-height: 50px;
   }
 }
@@ -780,8 +791,8 @@ body {
   &_header {
     font-size: $f-24;
     padding: 8px;
-    background-color: #7E7264;
-    color: #fafafa;
+    background-color: $main;
+    color: $font-white;
 
     @include mobile {
       font-size: $f-16;
@@ -812,7 +823,7 @@ body {
       z-index: 1;
       width: 30%;
       height: 3px;
-      background-color: #7E7264;
+      background-color: $main;
     }
 
     @include mobile {
@@ -829,7 +840,7 @@ body {
     border-radius: 3px;
     border: 1px solid #ccc;
     padding: 8px;
-    background-color: #fafafa;
+    background-color: $bg-white;
     margin: 0 24px 24px 0;
     width: calc(33.3333333% - 48px / 3);
 
@@ -919,7 +930,7 @@ body {
 
   &_item {
     border-radius: 3px;
-    background-color: #fafafa;
+    background-color: $bg-white;
     padding: 8px;
   }
 
@@ -1063,7 +1074,7 @@ body {
     }
 
     &_list {
-      background-color: #fafafa;
+      background-color: $bg-white;
       border: 1px solid #ccc;
       border-radius: 3px;
       padding: 16px;
@@ -1111,7 +1122,7 @@ body {
 
     &_list {
       counter-reset: number 0;
-      background-color: #fff;
+      background-color: $bg-white;
       padding: 10px;
       border-radius: 3px;
 
@@ -1276,10 +1287,10 @@ body {
 }
 
 .follow-me a::before {
-  background-color: #eee;
+  background-color: $bg-white;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  color: #333;
+  color: $font-black;
   display: inline-block;
   font-family: FontAwesome;
   height: 32px;
