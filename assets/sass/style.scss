@@ -14,6 +14,7 @@ Meiryo,
 'MS PGothic',
 sans-serif;
 
+
 // font-size
 $f-32: 3.2rem;
 $f-28: 2.8rem;
@@ -720,17 +721,17 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 100px;
+  height: 200px;
   border-top: 1px solid #333;
   font-size: $f-14;
   background-color: $transparent9;
 
   @include mobile {
-    height: 80px;
+    height: 120px;
   }
 
   &_thumbnail {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   &_image {
@@ -757,6 +758,7 @@ body {
 
   @include mobile {
     right: 30px;
+    bottom: 30px;
   }
 
   &_link {
