@@ -137,7 +137,6 @@ body {
     &:before {
       background-color: $bg-white;
     }
-
   }
 }
 
@@ -411,7 +410,7 @@ body {
     background-color: $transparent8;
     padding: 16px;
     width: 100%;
-    max-width: 400px;
+    max-width: 410px;
     border-radius: 3px;
 
     @include tablet {
@@ -546,7 +545,6 @@ body {
     }
   }
 
-
   &_link {
     display: block;
     padding: 5rem;
@@ -626,7 +624,6 @@ body {
     @include tablet {
       width: 80%;
     }
-
   }
 
   &_image {}
@@ -642,8 +639,6 @@ body {
   @include mobile {
     width: 100%;
   }
-
-
 
   &_title {
     padding: 1rem;
@@ -695,7 +690,7 @@ body {
   &_open {
     &-time {
       max-width: 250px;
-      padding: 0.5rem;
+      padding: 0.5rem 0;
 
       @include mobile {
         width: 100%;
@@ -706,7 +701,7 @@ body {
       display: flex;
       justify-content: space-between;
       max-width: 250px;
-      padding: 0.5rem;
+      padding: 0.5rem 0;
     }
   }
 }
@@ -751,7 +746,6 @@ body {
 // ------------------------------------------
 
 .pagetop {
-  // display: none;
   position: fixed;
   right: 60px;
   bottom: 25px;
@@ -788,7 +782,6 @@ body {
   @include mobile {
     margin-bottom: 16px;
   }
-
 
   &_header {
     font-size: $f-24;
@@ -1336,7 +1329,9 @@ body {
 }
 
 .follow-me a[href*="instagram.com"]:hover::before {
-  background-color: #125688;
+  // background-color: #125688;
+  background-color: #f13f79;
+  // background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
 }
 
 .follow-me a[href*="skype.com"]:hover::before,

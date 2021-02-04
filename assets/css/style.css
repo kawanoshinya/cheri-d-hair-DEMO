@@ -368,7 +368,7 @@ body {
   background-color: rgba(250, 250, 250, 0.8);
   padding: 16px;
   width: 100%;
-  max-width: 400px;
+  max-width: 410px;
   border-radius: 3px;
 }
 
@@ -688,7 +688,7 @@ body {
 
 .table_open-time {
   max-width: 250px;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -705,7 +705,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 250px;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .footer {
@@ -1373,7 +1373,7 @@ body {
 }
 
 .follow-me a[href*="instagram.com"]:hover::before {
-  background-color: #125688;
+  background-color: #f13f79;
 }
 
 .follow-me a[href*="skype.com"]:hover::before,
