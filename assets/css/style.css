@@ -507,6 +507,7 @@ body {
 
 .menu_button {
   width: 45%;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {
