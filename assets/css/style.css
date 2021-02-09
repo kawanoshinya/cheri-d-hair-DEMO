@@ -709,6 +709,10 @@ body {
   padding: 0.5rem 0;
 }
 
+.table_text {
+  padding: 0.5rem 0;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
