@@ -81,7 +81,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: #fafafa;
-  min-width: 220px;
+  min-width: 300px;
 }
 
 .page_title:before {
