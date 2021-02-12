@@ -904,7 +904,7 @@ body {
     }
   }
 
-  &_subTitle {
+  &_price {
     position: relative;
     text-align: right;
     margin-right: 50px;
@@ -914,6 +914,10 @@ body {
       position: absolute;
       top: 0;
       right: -50px;
+    }
+
+    &--free {
+      text-align: right;
     }
   }
 

@@ -926,17 +926,21 @@ body {
   left: -16px;
 }
 
-.course_subTitle {
+.course_price {
   position: relative;
   text-align: right;
   margin-right: 50px;
 }
 
-.course_subTitle:after {
+.course_price:after {
   content: '(税込)';
   position: absolute;
   top: 0;
   right: -50px;
+}
+
+.course_price--free {
+  text-align: right;
 }
 
 .course_list {
