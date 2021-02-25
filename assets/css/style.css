@@ -92,10 +92,21 @@ body {
 
 .page_image {
   position: absolute;
-  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.page_image--about {
+  top: 50%;
+}
+
+.page_image--beginner {
+  top: -62%;
+}
+
+.page_image--member {
+  top: -40%;
 }
 
 .fixed {
@@ -535,13 +546,20 @@ body {
 .menu_link {
   display: block;
   padding: 5rem;
-  background-image: url(../img/top_mainvisual.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-shadow: 5px 7px 15px -7px rgba(0, 0, 0, 0.37);
           box-shadow: 5px 7px 15px -7px rgba(0, 0, 0, 0.37);
   border-radius: 3px;
+}
+
+.menu_link--beginner {
+  background-image: url(../img/top_beginner.jpg);
+}
+
+.menu_link--member {
+  background-image: url(../img/top_member.jpg);
 }
 
 @media screen and (max-width: 1024px) {

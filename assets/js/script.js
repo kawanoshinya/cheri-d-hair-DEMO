@@ -15,13 +15,13 @@ document.getElementById('bg_layer').addEventListener('click', function () {
     hamburger();
 });
 
-$('a[href^="#"]').click(function () {
+jQuery('a[href^="#"]').click(function () {
     var speed = 500;
-    var headerH = $(".header").height();
-    var href = $(this).attr("href");
-    var target = $(href == "#" || href == "" ? 'html' : href);
+    var headerH = jQuery(".header").height();
+    var href = jQuery(this).attr("href");
+    var target = jQuery(href == "#" || href == "" ? 'html' : href);
     var position = target.offset().top - headerH;
-    $("html, body").animate({ scrollTop: position }, speed, "swing");
+    jQuery("html, body").animate({ scrollTop: position }, speed, "swing");
     hamburger();
     return false;
 });
@@ -37,13 +37,13 @@ for (let i = 0; i < list.length; i++) {
 
 
 // headerの高さ分bodyを下げる
-$(function () {
-    var height = $("#header").height();
-    $("body").css("margin-top", height + 0);//0pxだけ余裕をもたせる
+jQuery(function () {
+    var height = jQuery("#header").height();
+    jQuery("body").css("margin-top", height + 0);//0pxだけ余裕をもたせる
 });
 
 // スマホのアドレスバー対策
-$(".fv").css("height", $(window).height());
+jQuery(".fv").css("height", jQuery(window).height());
 
 
 // tellボタン（スマホのみ現れる）
@@ -51,22 +51,22 @@ var ua = navigator.userAgent.toLowerCase();
 var isMobile = /iphone/.test(ua) || /android(.+)?mobile/.test(ua);
 
 if (!isMobile) {
-    $('a[href^="tel:"]').on('click', function (e) {
+    jQuery('a[href^="tel:"]').on('click', function (e) {
         e.preventDefault();
     });
 }
 
 
 // // ページトップへ戻るボタン
-$(function () {
+jQuery(function () {
     // TOPに戻るボタン
-    var topBtn = $('.pagetop');
+    var topBtn = jQuery('.pagetop');
     topBtn.hide();
 
     //スクロールが100に達したらボタン表示
-    $(window).scroll(function () {
-        var w = $(window).width();
-        if ($(this).scrollTop() > 200) {
+    jQuery(window).scroll(function () {
+        var w = jQuery(window).width();
+        if (jQuery(this).scrollTop() > 200) {
             topBtn.fadeIn();
         } else {
             topBtn.fadeOut();
@@ -75,7 +75,7 @@ $(function () {
 
     //スムーススクロールでページトップへ
     topBtn.click(function () {
-        $('body,html').animate({
+        jQuery('body,html').animate({
             scrollTop: 0
         }, 500);
         return false;
@@ -85,20 +85,20 @@ $(function () {
 
 // // スクロール禁止
 // // （.hamburger = メニューのボタン　.nav　=　メニューの本体）
-// $(function () {
+// jQuery(function () {
 //     var state = false;
 //     var scrollpos;
 
-//     $('.hamburger').on('click', function () {
+//     jQuery('.hamburger').on('click', function () {
 //         if (state == false) {
-//             scrollpos = $(window).scrollTop();
-//             $('body').addClass('fixed').css({ 'top': -scrollpos });
-//             $('.nav').addClass('open');
+//             scrollpos = jQuery(window).scrollTop();
+//             jQuery('body').addClass('fixed').css({ 'top': -scrollpos });
+//             jQuery('.nav').addClass('open');
 //             state = true;
 //         } else {
-//             $('body').removeClass('fixed').css({ 'top': 0 });
+//             jQuery('body').removeClass('fixed').css({ 'top': 0 });
 //             window.scrollTo(0, scrollpos);
-//             $('.nav').removeClass('open');
+//             jQuery('.nav').removeClass('open');
 //             state = false;
 //         }
 //     });

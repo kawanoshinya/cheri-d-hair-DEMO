@@ -143,11 +143,24 @@ body {
 
   &_image {
     position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    &--about {
+      top: 50%;
+    }
+
+    &--beginner {
+      top: -62%;
+    }
+
+    &--member {
+      top: -40%;
+    }
   }
 }
+
+
 
 
 // スクロール禁止用
@@ -558,12 +571,19 @@ body {
   &_link {
     display: block;
     padding: 5rem;
-    background-image: url(../img/top_mainvisual.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 5px 7px 15px -7px rgba(0, 0, 0, 0.37);
     border-radius: 3px;
+
+    &--beginner {
+      background-image: url(../img/top_beginner.jpg);
+    }
+
+    &--member {
+      background-image: url(../img/top_member.jpg);
+    }
 
     @include tablet {
       padding: 2rem;
