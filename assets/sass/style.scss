@@ -28,15 +28,13 @@ $base:rgb(223, 224, 216);
 $main:rgb(126, 114, 100);
 // $accent:rgb(, , );
 
-$bg-white:rgb(250, 250, 250);
-$bg-black:rgb(51, 51, 51);
+$white:rgb(250, 250, 250);
+$black:rgb(51, 51, 51);
 
-$transparent8:rgba(250, 250, 250, 0.8);
-$transparent9:rgba(250, 250, 250, 0.9);
-
-$font-white:rgb(250, 250, 250);
-$font-black:rgb(51, 51, 51);
-
+$white-alpha8:rgba(250, 250, 250, 0.8);
+$white-alpha9:rgba(250, 250, 250, 0.9);
+$black-alpha2:rgba(51, 51, 51, 0.2);
+$black-alpha8:rgba(51, 51, 51, 0.8);
 
 // ブレイクポイント
 $tablet:1024px;
@@ -99,7 +97,7 @@ body {
       height: 1px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: $bg-black;
+      background-color: $black;
     }
 
     @include mobile {
@@ -120,7 +118,6 @@ body {
   &_header {
     height: 200px;
     position: relative;
-    overflow: hidden;
 
     @include mobile {
       height: 100px;
@@ -132,36 +129,17 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: $font-white;
+    color: $white;
     min-width: 300px;
     z-index: 1;
 
+    background: linear-gradient(90deg, transparent, $black-alpha8, $black-alpha8, $black-alpha8, transparent);
+
     &:before {
-      background-color: $bg-white;
-    }
-  }
-
-  &_image {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    &--about {
-      top: 50%;
-    }
-
-    &--beginner {
-      top: -62%;
-    }
-
-    &--member {
-      top: -40%;
+      background-color: $white;
     }
   }
 }
-
-
-
 
 // スクロール禁止用
 .fixed {
@@ -218,7 +196,7 @@ body {
   top: 0;
   left: 0;
   z-index: 20;
-  background-color: $transparent9;
+  background-color: $white-alpha9;
 
   &_inner {
     max-width: 1200px;
@@ -230,8 +208,6 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-
-  &_title {}
 
   &_image {
     height: 30px;
@@ -298,7 +274,7 @@ body {
       border-radius: 5px;
       border: 1px solid #333;
       font-weight: bold;
-      color: $font-black;
+      color: $black;
       padding: 8px 0 8px 36px;
       margin: 16px auto;
       width: 160px;
@@ -337,7 +313,7 @@ body {
       height: 100%;
       padding: 10%;
       border: 1px solid #333;
-      background-color: $bg-white;
+      background-color: $white;
       position: relative;
       cursor: pointer;
     }
@@ -349,7 +325,7 @@ body {
   width: 80%;
   height: 2px;
   border-radius: 2px;
-  background-color: $bg-black;
+  background-color: $black;
   position: absolute;
   transition: 0.2s;
 
@@ -429,7 +405,7 @@ body {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: $transparent8;
+    background-color: $white-alpha8;
     padding: 16px;
     width: 100%;
     max-width: 410px;
@@ -535,12 +511,6 @@ body {
 //                menu
 // ------------------------------------------
 .menu {
-  &_inner {}
-
-  &_header {}
-
-  &_title {}
-
   &_main {
     display: flex;
     justify-content: space-around;
@@ -593,7 +563,7 @@ body {
   &_text {
     text-align: center;
     padding: 2rem;
-    background-color: $transparent8;
+    background-color: $white-alpha8;
     border-radius: 3px;
 
   }
@@ -621,12 +591,6 @@ body {
 // ------------------------------------------
 
 .access {
-  &_inner {}
-
-  &_header {}
-
-  &_title {}
-
   &_map {
     padding: 2rem 0;
 
@@ -656,8 +620,6 @@ body {
       width: 80%;
     }
   }
-
-  &_image {}
 }
 
 .table {
@@ -754,7 +716,7 @@ body {
   height: 200px;
   border-top: 1px solid #333;
   font-size: $f-14;
-  background-color: $transparent9;
+  background-color: $white-alpha9;
 
   @include mobile {
     height: 120px;
@@ -771,8 +733,6 @@ body {
       width: 200px;
     }
   }
-
-  &_copy {}
 }
 
 
@@ -798,12 +758,12 @@ body {
     text-align: center;
     border: 1px solid #737373;
     line-height: 50px;
-    background-color: $bg-white;
+    background-color: $white;
   }
 
   &_icon {
     font-size: 20px;
-    color: $font-black;
+    color: $black;
     line-height: 50px;
   }
 }
@@ -822,14 +782,13 @@ body {
     font-size: $f-24;
     padding: 8px;
     background-color: $main;
-    color: $font-white;
+    color: $white;
 
     @include mobile {
       font-size: $f-16;
     }
   }
 
-  &_title {}
 }
 
 .card {
@@ -870,7 +829,7 @@ body {
     border-radius: 3px;
     border: 1px solid #ccc;
     padding: 8px;
-    background-color: $bg-white;
+    background-color: $white;
     margin: 0 24px 24px 0;
     width: calc(33.3333333% - 48px / 3);
 
@@ -954,17 +913,12 @@ body {
     padding: 8px;
   }
 
-  &_item {}
 }
 
 .operation {
-  &_inner {}
-
-  &_list {}
-
   &_item {
     border-radius: 3px;
-    background-color: $transparent8;
+    background-color: $white-alpha8;
     padding: 8px;
   }
 
@@ -1011,53 +965,50 @@ body {
     padding: 16px;
   }
 
-  &_item {}
-
   &_item+&_item {
     margin-top: 1rem;
   }
-
-  &_text {}
 }
 
 // ------------------------------------------
 //                beginner
 // ------------------------------------------
 
-// .beginner {
-//   .page_header {
-//     background-image: url(../img/menu-beginner.jpg);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-// }
+.beginner {
+  .page_header {
+    background-image: url(../img/menu-beginner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 75%;
+  }
+}
 
 
 // ------------------------------------------
 //                  member
 // ------------------------------------------
 
-// .member {
-//   .page_header {
-//     background-image: url(../img/menu-member.jpg);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-// }
+.member {
+  .page_header {
+    background-image: url(../img/menu-member.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 73%;
+  }
+}
 
 
 // **************************************************
 //                       about
 // **************************************************
-// .about {
-//   .page_header {
-//     background-image: url(../img/about.jpg);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//   }
-
-//   &_inner {}
-// }
+.about {
+  .page_header {
+    background-image: url(../img/about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+}
 
 .concept {
   margin-bottom: 80px;
@@ -1108,7 +1059,7 @@ body {
     }
 
     &_list {
-      background-color: $bg-white;
+      background-color: $white;
       border: 1px solid #ccc;
       border-radius: 3px;
       padding: 16px;
@@ -1152,11 +1103,9 @@ body {
       width: 100%;
     }
 
-    &_text {}
-
     &_list {
       counter-reset: number 0;
-      background-color: $bg-white;
+      background-color: $white;
       padding: 10px;
       border-radius: 3px;
 
@@ -1287,14 +1236,10 @@ body {
     margin-right: 8px;
   }
 
-  &_career {}
-
   &_main {
     padding: 8px;
     margin-bottom: 8px;
   }
-
-  &_text {}
 
   &_footer {
     text-align: right;
@@ -1303,8 +1248,6 @@ body {
       text-align: center;
     }
   }
-
-  &_link {}
 
   &_link+&_link {
     margin-left: 8px;
@@ -1321,10 +1264,10 @@ body {
 }
 
 .follow-me a::before {
-  background-color: $bg-white;
+  background-color: $white;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  color: $font-black;
+  color: $black;
   display: inline-block;
   font-family: FontAwesome;
   height: 32px;
