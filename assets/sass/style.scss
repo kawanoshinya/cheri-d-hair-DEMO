@@ -384,7 +384,7 @@ body {
 // ------------------------------------------
 .mainvisual {
   background-image: url(../img/top_mainvisual.jpg);
-  background-position: center;
+  background-position: 50% 70%;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -397,6 +397,8 @@ body {
   }
 
   @include mobile {
+    background-image: url(../img/top_mainvisual-sp.jpg);
+    background-position: 50% 40%;
     height: 270px;
   }
 
