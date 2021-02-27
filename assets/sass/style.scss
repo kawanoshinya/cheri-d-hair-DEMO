@@ -638,7 +638,7 @@ body {
   &_title {
     padding: 1rem;
     font-size: $f-28;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
 
     @include mobile {
       padding: 0.5rem;
@@ -656,7 +656,7 @@ body {
 
   &_row {
     display: flex;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $black;
     font-size: $f-14;
   }
 
